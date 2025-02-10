@@ -80,3 +80,5 @@ function nextVideo(){
 		e('group_four_affiliate_video_dd').innerHTML = e('amazon_products').getElementsByTagName('p')[video_index].innerHTML;
 	}
 }
+
+nextVideo();
