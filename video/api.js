@@ -59,7 +59,7 @@ var videos =
 'https://www.youtube.com/embed/lmrqxiq83pM'
 ];
 
-e('yt_tv').src = videos[video_index];
+e('yt_tv').src = videos[video_index]+'?autoplay=1';
 	
 e('yt_title').innerHTML = e('amazon_products').getElementsByTagName('span')[0].innerHTML;
 e('group_four_affiliate_video_dd').innerHTML = e('amazon_products').getElementsByTagName('p')[0].innerHTML;
