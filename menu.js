@@ -103,6 +103,7 @@ menu_buffer = parseInt(getCookie("menu_buffer"));
 					res.onload = function(){
 
 					if(res.responseText){
+				if(!res.responseText.includes("<!DOCTYPE")){
 			let jsonData = JSON.parse(res.responseText);
 
 						if(menu_index< (menu_buffer*8/2) ){
@@ -125,6 +126,7 @@ if(menu_index<menu_buffer*8 && menu_index<menu.length){
 	menu_buffer=0;
 	setCookie("menu_buffer",menu_buffer, 30);
 }
+					}
 					}	
 					};
 			
