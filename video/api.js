@@ -4,8 +4,15 @@ e('yt_tv').style.height = (e('yt_tv').offsetWidth*220/400)+'px';
 e('yt_tv').onresize = function(){
 e('yt_tv').style.height = (e('yt_tv').offsetWidth*220/400)+'px';
     };
-    
+
+
+
 var video_index = 0;
+
+if(getCookie("video_index")){
+video_index = parseInt(getCookie("video_index"));
+}
+
 
 var videos = 
 [
@@ -60,12 +67,14 @@ e('group_four_affiliate_video_dd').innerHTML = e('amazon_products').getElementsB
 function nextVideo(){
 	if(video_index<(videos.length-1)){
 		video_index+=1;
+		 setCookie("video_index", video_index, 30);
 		e('yt_tv').src = videos[video_index];
 		e('yt_title').innerHTML = e('amazon_products').getElementsByTagName('span')[video_index].innerHTML;
 		e('group_four_affiliate_video_dd').innerHTML = e('amazon_products').getElementsByTagName('p')[video_index].innerHTML;
 	
 	}else{
 		video_index=0;
+		setCookie("video_index", video_index, 30);
 		e('yt_tv').src = videos[video_index];
 		e('yt_title').innerHTML = e('amazon_products').getElementsByTagName('span')[video_index].innerHTML;
 		e('group_four_affiliate_video_dd').innerHTML = e('amazon_products').getElementsByTagName('p')[video_index].innerHTML;
