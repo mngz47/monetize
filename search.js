@@ -1,11 +1,11 @@
 
 var search_index = 0;
   
-  function search(txt){
+  function search(game){
 
 	  if(search_index<menu.length){
-		 if(txt.length>4){
-	  if(menu[search_index].toLowerCase().includes(txt.toLowerCase())){
+		 if(game.length>4){
+	  if(menu[search_index].toLowerCase().includes(game.toLowerCase())){
 
 		  e('menu').innerHTML = '';
 		   menu_index = search_index;
@@ -13,7 +13,7 @@ var search_index = 0;
 		 
 		  
 	  }else{
-		  search(txt);
+		  search(game);
 		  search_index+=1;
 	  }
 	  
