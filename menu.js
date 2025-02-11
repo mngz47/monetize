@@ -85,7 +85,7 @@
 	    ];
 
 
-var menu_index = 0;
+var menu_index = 1;
 
 if(getCookie("menu_index")){
 menu_index = parseInt(getCookie("menu_index"));
@@ -117,7 +117,7 @@ if(menu_index%8==0){
 
 }else{
 	if(menu_index<menu.length){
-	menu_index+=1;
+	menu_index+=1; 
 	setCookie("menu_index", menu_index, 30);
 	serve_menu( menu[menu_index]);
 	}else{
