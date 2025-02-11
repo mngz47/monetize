@@ -91,7 +91,7 @@ if(getCookie("menu_index")){
 menu_index = parseInt(getCookie("menu_index"));
 }
 
-var menu_buffer = 2;
+var menu_buffer = 0;
 
 if(getCookie("menu_buffer")){
 menu_buffer = parseInt(getCookie("menu_buffer"));
