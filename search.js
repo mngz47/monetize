@@ -6,7 +6,7 @@ var search_index = 0;
 	  if(search_index<menu.length){
 		 if(game.length>4){
 
-		var menu_item = menu[search_index].toLowerCase();	
+		var menu_item = menu[search_index];	
 		var search_item = game.toLowerCase();
 			 
 	  if(menu_item.includes(search_item)){
