@@ -3,8 +3,6 @@ var search_index = 0;
   
   function search(txt){
 
-   var games =  e('contents').getElementsByTagName('p');
-
 	  if(search_index<menu.length){
 		 if(txt.length>4){
 	  if(menu[search_index].toLowerCase().includes(txt.toLowerCase())){
