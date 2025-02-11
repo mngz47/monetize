@@ -97,7 +97,7 @@ if(getCookie("menu_buffer")){
 menu_buffer = parseInt(getCookie("menu_buffer"));
 }
 
-console.log("Menu Index ("+menu_index+")");
+console.log("Menu Index ("+menu_index+") Menu Size("+menu.length+")");
 
 				function serve_menu(name){
 				var res = sendreq(name+"/meta.json");
@@ -114,11 +114,13 @@ e('menu-text').innerHTML += '<a href='+jsonData["run"]+' style="display:block;fo
 						}
 
 if(menu_index%8==0){
-
+	menu_index+=1; 
+	setCookie("menu_index", menu_index, 30);
 }else{
 	if(menu_index<menu.length){
 	menu_index+=1; 
 	setCookie("menu_index", menu_index, 30);
+		
 	serve_menu( menu[menu_index]);
 	}else{
 		menu_index=0;
