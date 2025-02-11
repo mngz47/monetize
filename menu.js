@@ -91,12 +91,13 @@ if(getCookie("menu_index")){
 menu_index = parseInt(getCookie("menu_index"));
 }
 
-var menu_buffer = 0;
+var menu_buffer = 1;
 
 if(getCookie("menu_buffer")){
 menu_buffer = parseInt(getCookie("menu_buffer"));
 }
 
+console.log("Menu Index -"+menu_index+" Menu Buffer -"+menu_buffer);
 
 				function serve_menu(name){
 				var res = sendreq(name+"/meta.json");
