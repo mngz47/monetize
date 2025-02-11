@@ -118,7 +118,7 @@ if(menu_index<menu_buffer*8 && menu_index<menu.length){
 	setCookie("menu_index", menu_index, 30);
 	serve_menu( menu[menu_index]);
 	
-}else if(menu_index==(menu_buffer*8-1)  && menu_index<menu.length){
+}else if((menu_buffer+1)*8<menu.length){
 	menu_buffer+=1;
 	setCookie("menu_buffer",menu_buffer, 30);
 }else{
