@@ -85,17 +85,12 @@
 	    ];
 
 
-var menu_index = 1;
+var menu_index = 15;
 
 if(getCookie("menu_index")){
 menu_index = parseInt(getCookie("menu_index"));
 }
 
-var menu_buffer = 1;
-
-if(getCookie("menu_buffer")){
-menu_buffer = parseInt(getCookie("menu_buffer"));
-}
 
 console.log("Menu Index ("+menu_index+") Menu Size("+menu.length+")");
 
@@ -114,36 +109,18 @@ e('menu-text').innerHTML += '<a href='+jsonData["run"]+' style="display:block;fo
 						}
 
 if(menu_index%8==0){
-	menu_index+=1; 
-	setCookie("menu_index", menu_index, 30);
+		menu_index+=1; 
+		setCookie("menu_index", menu_index, 30);
 }else{
 	if(menu_index<menu.length){
-	menu_index+=1; 
-	setCookie("menu_index", menu_index, 30);
-		
-	serve_menu( menu[menu_index]);
+		menu_index+=1; 
+		setCookie("menu_index", menu_index, 30);
+		serve_menu( menu[menu_index]);
 	}else{
 		menu_index=0;
 		setCookie("menu_index", menu_index, 30);
 	}
 }
-
-					
-/* 
-if(menu_index<menu_buffer*8 && menu_index<menu.length){
-	menu_index+=1;
-	setCookie("menu_index", menu_index, 30);
-	serve_menu( menu[menu_index]);
-	
-}else if((menu_buffer+1)*8<menu.length){
-	menu_buffer+=1;
-	setCookie("menu_buffer",menu_buffer, 30);
-}else{
-	menu_index=0;
-	setCookie("menu_index", menu_index, 30);
-	menu_buffer=0;
-	setCookie("menu_buffer",menu_buffer, 30);
-} */
 					}
 					}	
 					};
