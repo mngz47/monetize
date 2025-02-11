@@ -4,7 +4,7 @@ var search_index = 0;
   function search(game){
 
 	  if(search_index<menu.length){
-		// if(game.length>4){
+		 if(game.length>4){
 	  if(menu[search_index].toLowerCase().includes(game.toLowerCase())){
 
 		  e('menu').innerHTML = '';
@@ -17,7 +17,7 @@ var search_index = 0;
 		  search_index+=1;
 	  }
 	  
-		// } 
+		 } 
   }else{
 	          search_index=0;
   }
