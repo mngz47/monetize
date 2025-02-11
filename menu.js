@@ -97,7 +97,7 @@ if(getCookie("menu_buffer")){
 menu_buffer = parseInt(getCookie("menu_buffer"));
 }
 
-console.log("Menu Index -"+menu_index+" Menu Buffer -"+menu_buffer);
+console.log("Menu Index ("+menu_index+")");
 
 				function serve_menu(name){
 				var res = sendreq(name+"/meta.json");
@@ -107,24 +107,33 @@ console.log("Menu Index -"+menu_index+" Menu Buffer -"+menu_buffer);
 				if(!res.responseText.includes("<!DOCTYPE")){
 			let jsonData = JSON.parse(res.responseText);
 
-						if(menu_index< (menu_buffer*8-4) ){
+						if(menu_index%2==0){
 e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' style="animation: 20s slider infinite;" ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
 						}else{
 e('menu-text').innerHTML += '<a href='+jsonData["run"]+' style="display:block;font-size:2em; text-decoration: none;" >'+jsonData["title"]+'</a>';
 						}
 
+if(menu_index%8==0){
+
+}else{
+	if(menu_index<menu.length){
+	menu_index+=1;
+	setCookie("menu_index", menu_index, 30);
+	serve_menu( menu[menu_index]);
+	}else{
+		menu_index=0;
+		setCookie("menu_index", menu_index, 30);
+	}
+}
+
+					
+/* 
 if(menu_index<menu_buffer*8 && menu_index<menu.length){
 	menu_index+=1;
 	setCookie("menu_index", menu_index, 30);
 	serve_menu( menu[menu_index]);
 	
-}else{
-	menu_buffer+=1;
-	setCookie("menu_buffer",menu_buffer, 30);
-}
-
-/* 
-else if((menu_buffer+1)*8<menu.length){
+}else if((menu_buffer+1)*8<menu.length){
 	menu_buffer+=1;
 	setCookie("menu_buffer",menu_buffer, 30);
 }else{
