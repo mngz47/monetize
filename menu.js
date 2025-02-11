@@ -106,12 +106,12 @@ menu_buffer = parseInt(getCookie("menu_buffer"));
 				if(!res.responseText.includes("<!DOCTYPE")){
 			let jsonData = JSON.parse(res.responseText);
 
-						if(menu_index< (menu_buffer*8/2) ){
+						if(menu_index< (menu_buffer*8-4) ){
 e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' style="animation: 20s slider infinite;" ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
 						}else{
 e('menu-text').innerHTML += '<a href='+jsonData["run"]+' style="display:block;font-size:2em; text-decoration: none;" >'+jsonData["title"]+'</a>';
 						}
-						
+
 if(menu_index<menu_buffer*8 && menu_index<menu.length){
 	menu_index+=1;
 	setCookie("menu_index", menu_index, 30);
