@@ -8,7 +8,7 @@
 		    "Slot-Machine",
 	      "mia-slot-machine",
 		    "mega-slot",
-		    "avatar-slots",
+		    "amerani-canvas-slots/src",
 		    "bieberpong-static",
 		    "html5-pong",
 		    "html5-asteroids",
