@@ -9,7 +9,7 @@ if(getCookie("price")){
  credits =  parseInt(getCookie("price"));
 }
   e("credits").innerHTML = "CREDITS: "+credits;
-  e("buy_credits").innerHTML += " ("+credits+")";
+  e("buy_credits").innerHTML = "BUY CREDITS: ("+credits+")";
 }
 //userId
 
