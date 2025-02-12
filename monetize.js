@@ -13,7 +13,7 @@ if(getCookie("price")){
 }
 //userId
 
-var HOME = "https://mngz47.github.io/pamel_slots/index.html";
+var HOME = location.href;
 
 function monetize_purchase(price){
 this.price = price;
@@ -27,6 +27,8 @@ setCookie("price", price, 30);
 payfast2();
   }else if(e("paypal_option").checked){
 paypal();
+  }else{
+alert("select payment option");
   }
 }
 
