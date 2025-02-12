@@ -2,7 +2,9 @@ function paypal() {
   // create accessToken using your clientID and clientSecret
   // for the full stack example, please see the Standard Integration guide
   // https://developer.paypal.com/docs/multiparty/checkout/standard/integrate/
+  // https://developer.paypal.com/api/rest/authentication/
 
+  
   const accessToken = "REPLACE_WITH_YOUR_ACCESS_TOKEN";
   
   return fetch ("https://api-m.sandbox.paypal.com/v2/checkout/orders", {
