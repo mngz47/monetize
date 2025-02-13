@@ -80,7 +80,14 @@
 		    "games/tacit",
 	      "games/tank",
 		    "games/timberpig",
-		    "games/wipeglass"
+		    "games/wipeglass",
+		    "memory-game",
+		    "Nokia3310-Snake",
+		    "chrome-trex-game",
+		    "candy-crush",
+		    "pac-man-2",
+		    "Tetris-Basic",
+		    "space-invaders"
 		    
 	    ];
 
