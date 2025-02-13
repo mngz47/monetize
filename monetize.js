@@ -11,7 +11,12 @@ if(getCookie("price")){
   e("credits").innerHTML = "CREDITS: "+credits;
   e("buy_credits").innerHTML = "BUY CREDITS: ("+credits+")";
 }
-//userId
+
+function syncCredits(credits){
+   this.credits += credits;
+  setCookie("price", this.credits , 30);
+ showCredits();
+}
 
 var HOME = location.href;
 
