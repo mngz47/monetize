@@ -135,4 +135,40 @@ if(menu_index%8==0){
 	}
 	
 serve_menu(menu[menu_index]);
-		
+
+//ux
+
+function splash(){
+
+    var logo = ne("img");
+
+  logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
+  logo.width = "200px";
+  logo.style.position = "absolute";
+  logo.style.left = "50%";
+  logo.style.top = "50%";
+  setInterval(toggleEnlarge(logo),1000);
+
+document.body.onload = function(){
+
+    document.body.appendChild(logo);
+    setInterval(toggleEnlarge(logo),1000);
+
+    setTimeout(funtion(){   document.body.removeChild(logo);  };,6000)
+  
+};
+    
+    
+}
+
+splash();
+
+funtion toggleEnlarge(logo){
+
+if(logo.class){
+ logo.class = "";
+}else{
+ logo.class = "img-enlarge";
+}
+  
+}
