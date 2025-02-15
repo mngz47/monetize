@@ -138,9 +138,9 @@ serve_menu(menu[menu_index]);
 
 //ux
 
-function splash(){
+var logo = ne("img");
 
-    var logo = ne("img");
+function splash(){
 
   logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
   logo.width = "200px";
@@ -156,7 +156,7 @@ var content = document.body.innerHTML;
 	document.body.innerHTML = "";
 	
     document.body.appendChild(logo);
-    setInterval(toggleEnlarge(logo),1000);
+    setInterval(toggleEnlarge,1000);
 
     setTimeout(function(){  document.body.innerHTML=content;  },6000);
   
@@ -167,7 +167,7 @@ var content = document.body.innerHTML;
 
 splash();
 
-funtion toggleEnlarge(logo){
+funtion toggleEnlarge(){
 
 if(logo.class){
  logo.class = "";
