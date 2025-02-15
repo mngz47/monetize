@@ -1,0 +1,10 @@
+.img-enlarge {
+  transform-origin: left top;
+  animation: scale 2000ms ease-in-out forwards;
+}
+
+@keyframes scale {
+  to {
+    transform: scale(1.2);
+  }
+}
