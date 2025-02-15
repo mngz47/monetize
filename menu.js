@@ -158,7 +158,7 @@ var content = document.body.innerHTML;
     document.body.appendChild(logo);
     setInterval(toggleEnlarge(logo),1000);
 
-    setTimeout(funtion(){   document.body.removeChild(logo);document.body.innerHTML=content;  };,6000);
+    setTimeout(funtion(){  document.body.innerHTML=content;  },6000);
   
 };
     
