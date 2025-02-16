@@ -167,7 +167,7 @@ var content = document.body.innerHTML;
 
 splash();
 
-funtion toggleEnlarge(){
+function toggleEnlarge(){
 
 if(logo.class){
  logo.class = "";
