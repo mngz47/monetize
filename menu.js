@@ -149,6 +149,7 @@ function splash(){
   logo.style.position = "absolute";
   logo.style.left = Math.round(window.offsetWidth/2)+"px";
   logo.style.top = Math.round(window.offsetHeight/2)+"px";
+
     
   setInterval(toggleEnlarge(logo),1000);
 
@@ -169,14 +170,15 @@ window.onload = function(){
 
 splash();
 
-function toggleEnlarge(){
+function toggleEnlarge(){	
+if(logo.style.transform.origin){
+  logo.style.transform.origin = "";
+  logo.style.animation = "";
 
-if(logo.class){
- logo.class = "";
 }else{
- logo.class = "img-enlarge";
+  logo.style.transform.origin = "left top";
+  logo.style.animation = "scale 2000ms ease-in-out forwards";
 }
-  
 }
 
 var welcome_message = ne("p");
