@@ -149,7 +149,8 @@ function splash(){
   logo.style.top = "50%";
   setInterval(toggleEnlarge(logo),1000);
 
-document.body.onload = function(){
+	//document.body
+window.onload = function(){
 
 var content = document.body.innerHTML;
 
