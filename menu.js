@@ -147,8 +147,8 @@ function splash(){
   logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
   logo.style.width = "200px";
   logo.style.position = "absolute";
-  logo.style.left = Math.round(screen.width/2);
-  logo.style.top = Math.round(screen.height/2);
+  logo.style.left = Math.round(screen.width/2)+"px";
+  logo.style.top = Math.round(screen.height/2)+"px";
 
     
   setInterval(toggleEnlarge(logo),1000);
@@ -160,10 +160,10 @@ window.onload = function(){
 
 	document.body.innerHTML = "";
 
-document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)";
-document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.backgroundPosition = Math.round(window.offsetWidth/2)+" "+Math.round(window.offsetHeight/2);
-document.body.style.backgroundSize = "200px";
+//document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)";
+//document.body.style.backgroundRepeat = "no-repeat";
+//document.body.style.backgroundPosition = Math.round(window.offsetWidth/2)+" "+Math.round(window.offsetHeight/2);
+//document.body.style.backgroundSize = "200px";
 	
 
     document.body.appendChild(logo);
