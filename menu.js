@@ -147,8 +147,8 @@ function splash(){
   logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
   logo.style.width = "200px";
   logo.style.position = "absolute";
-  logo.style.left = Math.round(window.offsetWidth/2);
-  logo.style.top = Math.round(window.offsetHeight/2);
+  logo.style.left = Math.round(screen.width/2);
+  logo.style.top = Math.round(screen.height/2);
 
     
   setInterval(toggleEnlarge(logo),1000);
@@ -167,7 +167,7 @@ document.body.style.backgroundSize = "200px";
 	
 
     document.body.appendChild(logo);
-    setInterval(toggleEnlarge,1000);
+    setInterval(toggleEnlarge,2000);
 
     setTimeout(function(){  welcome();  },10000);
   
@@ -177,13 +177,10 @@ document.body.style.backgroundSize = "200px";
 splash();
 
 function toggleEnlarge(){	
-if(logo.style.transformOrigin){
-  logo.style.transformOrigin = "";
-  logo.style.animation = "";
-
+if(logo.style.width == "70px"){
+   logo.style.width = "200px";
 }else{
-  logo.style.transformOrigin = "left top";
-  logo.style.animation = "scale 2000ms ease-in-out forwards";
+   logo.style.width = "70px";
 }
 }
 
