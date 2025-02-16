@@ -1,5 +1,4 @@
 //ux
-
 var content;
 
 var logo = ne("img");
@@ -7,10 +6,11 @@ var logo = ne("img");
 function splash(){
 
   logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
-  logo.width = "200px";
+  logo.style.width = "200px";
   logo.style.position = "absolute";
-  logo.style.left = window.offsetWidth/2;
-  logo.style.top = window.offsetHeight/2;
+  logo.style.left = Math.round(screen.width/2)+"px";
+  logo.style.top = Math.round(screen.height/2)+"px";
+
     
   setInterval(toggleEnlarge(logo),1000);
 
@@ -20,9 +20,15 @@ window.onload = function(){
     content = document.body.innerHTML;
 
 	document.body.innerHTML = "";
+
+//document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)";
+//document.body.style.backgroundRepeat = "no-repeat";
+//document.body.style.backgroundPosition = Math.round(window.offsetWidth/2)+" "+Math.round(window.offsetHeight/2);
+//document.body.style.backgroundSize = "200px";
 	
+
     document.body.appendChild(logo);
-    setInterval(toggleEnlarge,1000);
+    setInterval(toggleEnlarge,2000);
 
     setTimeout(function(){  welcome();  },10000);
   
@@ -31,14 +37,12 @@ window.onload = function(){
 
 splash();
 
-function toggleEnlarge(){
-
-if(logo.class){
- logo.class = "";
+function toggleEnlarge(){	
+if(logo.style.width == "70px"){
+   logo.style.width = "200px";
 }else{
- logo.class = "img-enlarge";
+   logo.style.width = "70px";
 }
-  
 }
 
 var welcome_message = ne("p");
@@ -85,4 +89,3 @@ function freeMonthlyQuota(){
     }
 
 }
-
