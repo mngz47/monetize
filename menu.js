@@ -159,7 +159,13 @@ window.onload = function(){
     content = document.body.innerHTML;
 
 	document.body.innerHTML = "";
+
+document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundPosition = Math.round(window.offsetWidth/2)+" "+Math.round(window.offsetHeight/2);
+document.body.style.backgroundSize = "200px";
 	
+
     document.body.appendChild(logo);
     setInterval(toggleEnlarge,1000);
 
@@ -171,12 +177,12 @@ window.onload = function(){
 splash();
 
 function toggleEnlarge(){	
-if(logo.style.transform.origin){
-  logo.style.transform.origin = "";
+if(logo.style.transformOrigin){
+  logo.style.transformOrigin = "";
   logo.style.animation = "";
 
 }else{
-  logo.style.transform.origin = "left top";
+  logo.style.transformOrigin = "left top";
   logo.style.animation = "scale 2000ms ease-in-out forwards";
 }
 }
