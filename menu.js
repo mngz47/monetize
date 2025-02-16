@@ -145,10 +145,10 @@ var logo = ne("img");
 function splash(){
 
   logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
-  logo.width = "200px";
+  logo.style.width = "200px";
   logo.style.position = "absolute";
-  logo.style.left = Math.round(window.offsetWidth/2)+"px";
-  logo.style.top = Math.round(window.offsetHeight/2)+"px";
+  logo.style.left = Math.round(window.offsetWidth/2);
+  logo.style.top = Math.round(window.offsetHeight/2);
 
     
   setInterval(toggleEnlarge(logo),1000);
