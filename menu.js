@@ -164,6 +164,8 @@ window.onload = function(){
 	preLoad.style.position = "absolute";
 	preLoad.style.left= "0px";
 	preLoad.style.top= "0px";
+	preLoad.style.width= "100%";
+	preLoad.style.height= "100%";
 	preLoad.style.zIndex= "10000";
 	preLoad.style.backgroundColor= "black";
 
