@@ -141,12 +141,14 @@ serve_menu(menu[menu_index]);
 var content;
 
 var logo = ne("img");
+var preLoad = ne("div");
 
 function splash(){
 
   logo.src = "https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg";
   logo.style.width = "200px";
   logo.style.position = "absolute";
+	logo.style.transition = "width 2s, height 3s";
   logo.style.left = Math.round(screen.width/2)+"px";
   logo.style.top = Math.round(screen.height/2)+"px";
 
@@ -158,15 +160,22 @@ window.onload = function(){
 
     content = document.body.innerHTML;
 
-	document.body.innerHTML = "";
+	
+	preLoad.style.position = "absolute";
+	preLoad.style.left= "0px";
+	preLoad.style.top= "0px";
+	preLoad.style.zIndex= "10000";
+	preLoad.style.backgroundColor= "black";
+
+//	document.body.innerHTML = "";
 
 //document.body.style.backgroundImage = "url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)";
 //document.body.style.backgroundRepeat = "no-repeat";
 //document.body.style.backgroundPosition = Math.round(window.offsetWidth/2)+" "+Math.round(window.offsetHeight/2);
 //document.body.style.backgroundSize = "200px";
 	
-
-    document.body.appendChild(logo);
+	preLoad.appendChild(logo);
+    document.body.appendChild(preLoad);
     setInterval(toggleEnlarge,2000);
 
     setTimeout(function(){  welcome();  },10000);
@@ -179,6 +188,10 @@ splash();
 function toggleEnlarge(){	
 if(logo.style.width == "70px"){
    logo.style.width = "200px";
+}else if(logo.style.width == "200px"){
+   logo.style.width = "150px";
+}else if(logo.style.width == "150px"){
+   logo.style.width = "100px";
 }else{
    logo.style.width = "70px";
 }
@@ -188,14 +201,18 @@ var welcome_message = ne("p");
 
 function welcome(){
 
+	welcome_message.style.display = "block";
+	welcome_message.style.backgroundColor = "white";
     welcome_message.innerHTML = "The project is non-profit for the purpose to preserve classic games. Search slots to win free credits, you will also access 600 free monthly lifetime credits. <a href=# onclick='confirm_welcome();return false;' >Confirm</a>";
-    document.body.appendChild(welcome_message);
+    preLoad.appendChild(welcome_message);
     
 }
 
 function confirm_welcome(){
     freeMonthlyQuota();
-    document.body.innerHTML=content;
+ //   document.body.innerHTML=content;
+	  document.body.removeChild(preLoad);
+	
 }
 
 //build customer relationship
