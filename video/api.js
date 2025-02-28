@@ -16,6 +16,17 @@ video_index = parseInt(getCookie("video_index"));
 
 var videos = 
 [
+	'https://www.youtube.com/embed/UsNllE9PM0M',
+	'https://www.youtube.com/embed/xnJu1pIwIos',
+	'https://www.youtube.com/embed/HDXyZV-SP34',
+	'https://www.youtube.com/embed/hybEUOFwi0s',
+	'https://www.youtube.com/embed/bMTdSJtII5w',
+	'https://www.youtube.com/embed/t46Jx6dunYE',
+	'https://www.youtube.com/embed/kl3YyOdF7SQ',
+	'https://www.youtube.com/embed/vqozy_sohYg',
+	'https://www.youtube.com/embed/Sgfkpr6qUrA',
+	'https://www.youtube.com/embed/tn9_TqyNSak',
+	
 	'https://www.youtube.com/embed/NK3DWlgCv14',
 	'https://www.youtube.com/embed/7QKCJW8hCbQ',
 	'https://www.youtube.com/embed/EU_P_WEsYug',
@@ -61,6 +72,17 @@ var videos =
 
 var yt_titles = 
 [
+	'New York Session US30 Trading',
+	'Lithuania vs. ZA | Nice Try',
+	'Skipped stage 2 and 3 ended up in stage 6 | flower snake',
+	'Few missing links on my roulette strategy',
+	'Mexico vs. ZA on chess.com | ran out of ideas',
+	'Stuck on stage 3 | flower snake',
+	'Struggling with 21 BlackJack',
+	'USA vs. ZA on chess.com | time ran out',
+	'Stuck on stage 3 reached stage 5 twice | flower snake',
+	'Double my account on roulette',
+	
 	'Nepal vs. ZA | clouded judge until I ran out of time',
 	'Stuck on stage 3 formulating movement | classic flower snake',
 	'Won the houses price in the first 46 seconds | Pamel Slots',
@@ -105,7 +127,18 @@ var yt_titles =
 ];
 
 var yt_descriptions = 
-[
+[       
+	'-<a href=https://www.youtube.com/watch?v=UsNllE9PM0M >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=xnJu1pIwIos >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=HDXyZV-SP34 >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=hybEUOFwi0s >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=bMTdSJtII5w >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=t46Jx6dunYE >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=kl3YyOdF7SQ >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=vqozy_sohYg >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=Sgfkpr6qUrA >Video</a>',
+	'-<a href=https://www.youtube.com/watch?v=tn9_TqyNSak >Video</a>',
+	
 	'-<a href=https://www.youtube.com/watch?v=NK3DWlgCv14 >Video</a>',
 	'-<a href=https://www.youtube.com/watch?v=7QKCJW8hCbQ >Video</a>',
 	'-<a href=https://www.youtube.com/watch?v=EU_P_WEsYug >Video</a>',
@@ -161,8 +194,8 @@ function nextVideo(){
 		video_index+=1;
 		 setCookie("video_index", video_index, 30);
 		e('yt_tv').src = videos[video_index];
-		e('yt_title').innerHTML = e('amazon_products').getElementsByTagName('span')[video_index].innerHTML;
-		e('group_four_affiliate_video_dd').innerHTML = e('amazon_products').getElementsByTagName('p')[video_index].innerHTML;
+		e('yt_title').innerHTML = yt_titles[video_index];//e('amazon_products').getElementsByTagName('span')[video_index].innerHTML;
+		e('group_four_affiliate_video_dd').innerHTML = yt_descriptions[video_index];//e('amazon_products').getElementsByTagName('p')[video_index].innerHTML;
 	
 	}else{
 		video_index=0;
