@@ -87,7 +87,14 @@
 		    "candy-crush",
 		    "pac-man-2",
 		    "Tetris-Basic",
-		    "space-invaders"
+		    "space-invaders",
+		    "HexGL-Racing",
+		    "HTML5-Games/audio-game",
+		    "HTML5-Games/ball-shooting",
+		    "HTML5-Games/box2d-car-game",
+		    "HTML5-Games/canvas-untangle-game",
+		    "HTML5-Games/ball-shooting",
+		    "HTML5-Games/box2d-car-game",
 		    
 	    ];
 
