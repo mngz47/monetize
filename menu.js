@@ -93,8 +93,10 @@
 		    "HTML5-Games/ball-shooting",
 		    "HTML5-Games/box2d-car-game",
 		    "HTML5-Games/canvas-untangle-game",
-		    "HTML5-Games/ball-shooting",
-		    "HTML5-Games/box2d-car-game",
+		    "HTML5-Games/count-99",
+		    "HTML5-Games/css3-matching-game",
+		    "HTML5-Games/multiply-defense",
+		    "HTML5-Games/multiply-defense",
 		    
 	    ];
 
