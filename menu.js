@@ -96,8 +96,8 @@
 		    "HTML5-Games/count-99",
 		    "HTML5-Games/css3-matching-game",
 		    "HTML5-Games/multiply-defense",
-		    "HTML5-Games/multiply-defense",
-		    
+		    "HTML5-Games/pingpoing",
+		    "HTML5-Games/rush"
 	    ];
 
 
