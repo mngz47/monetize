@@ -97,7 +97,10 @@
 		    "HTML5-Games/css3-matching-game",
 		    "HTML5-Games/multiply-defense",
 		    "HTML5-Games/pingpoing",
-		    "HTML5-Games/rush"
+		    "HTML5-Games/rush",
+		    "elemental-one",
+		    "candyjam"
+		    
 	    ];
 
 
