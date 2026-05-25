@@ -101,6 +101,7 @@ async function track_action(){
       
   showCredits();
   var actions = 0;
+     document.body.style.overflow = '';
   
   if(getCookie("actions")){
 actions = parseInt(getCookie("actions"));
@@ -112,6 +113,8 @@ actions = parseInt(getCookie("actions"));
 if(actions>10){
   //e("start").innerHTML = initCredits();
   toggle(e("start"));
+ 
+document.body.style.overflow = 'hidden';
   //auto_play_p_stop();
 }
   }
