@@ -268,35 +268,28 @@ function freeMonthlyQuota(){
 
 function show_m_surface_object(object){
 
-e('start').appendChild(object);
-
+document.body.appendChild(object);
 object_m_expand(object);
 
 }
 
 var expand_index = 0;
-
 function object_m_expand(object){
 
-if(expand_index<e('start').offsetWidth){
+if(expand_index<document.body.offsetWidth){
 
-	var x = e('start').offsetWidth/2-expand_index;
-var y = e('start').offsetHeight/2-expand_index;
+	var x = document.body.offsetWidth/2-expand_index;
+var y = document.body.offsetHeight/2-expand_index;
 
 		object.style.left = x+"px";
 		object.style.top = y+"px";
 		object.style.width = expand_index+"px";
 		object.style.height = expand_index+"px";
 
-
  		expand_index+=150;
-
-
 var expanding = function(){
-	
 	object_expand(object);
 
-    
 };
 
 setTimeout(expanding, 1000);
@@ -305,14 +298,10 @@ setTimeout(expanding, 1000);
 	
 	//if(expand_index>e('canvas_dimension_2').offsetWidth){
 		expand_index = 0;
-		e('start').removeChild(object);
-		e('start').value += " object removed <br>";
+		document.body.removeChild(object);
+		document.body.value += " object removed <br>";
 	//}
-	
 }
-
-
-
 }
 
 
