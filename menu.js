@@ -286,13 +286,13 @@ var y = document.body.offsetHeight/2-expand_index;
 		object.style.width = expand_index+"px";
 		object.style.height = expand_index+"px";
 
- 		expand_index+=150;
+ 		expand_index+=250;
 var expanding = function(){
 	object_expand(object);
 
 };
 
-setTimeout(expanding, 1000);
+setTimeout(expanding, 500);
 
 }else{
 	
