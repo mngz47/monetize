@@ -245,7 +245,9 @@ function freeMonthlyQuota(){
 			setCookie("price", 600 , 30);
 		}
 	}else{
-			alert("Buy credits or wait till the end of 30 days for more free credits.");
+		//	alert("Buy credits or wait till the end of 30 days for more free credits.");
+			show_m_surface_object(new_m_object("Buy credits or wait till the end of 30 days for more free credits.","url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)"));
+ 
 	}
 
     }else{ //first free credits
@@ -255,7 +257,82 @@ function freeMonthlyQuota(){
 			setCookie("price", 600 , 30);
 		}
 	    setCookie("CreditFreeQuota", Date.now().toString()  , 30);
-	    alert("Success - You have loaded your first 600 free credits. Your next free credits will load in 30 days");
+	    //alert("Success - You have loaded your first 600 free credits. Your next free credits will load in 30 days");
+		show_m_surface_object(new_m_object("Success - You have loaded your first 600 free credits. Your next free credits will load in 30 days","url(https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg)"));
+ 
     }
 
+}
+
+
+
+function show_m_surface_object(object){
+
+e('start').appendChild(object);
+
+object_m_expand(object);
+
+}
+
+var expand_index = 0;
+
+function object_m_expand(object){
+
+if(expand_index<e('start').offsetWidth){
+
+	var x = e('start').offsetWidth/2-expand_index;
+var y = e('start').offsetHeight/2-expand_index;
+
+		object.style.left = x+"px";
+		object.style.top = y+"px";
+		object.style.width = expand_index+"px";
+		object.style.height = expand_index+"px";
+
+
+ 		expand_index+=150;
+
+
+var expanding = function(){
+	
+	object_expand(object);
+
+    
+};
+
+setTimeout(expanding, 1000);
+
+}else{
+	
+	//if(expand_index>e('canvas_dimension_2').offsetWidth){
+		expand_index = 0;
+		e('start').removeChild(object);
+		e('start').value += " object removed <br>";
+	//}
+	
+}
+
+
+
+}
+
+
+// change background when direction changes
+// left - right - top - bottom
+
+
+
+
+
+function new_m_object(text,gbImg){
+var object = ne("span");
+object.innerHTML = text;
+object.style.backgroundImage = gbImg;
+object.style.color = "white";
+object.style.width = "wrap";
+object.style.backgroundColor = "black";
+object.style.display = "block";
+object.style.border = "solid black 2px";
+object.style.fontSize = "1em";
+object.style.position = "relative";
+return object;
 }
