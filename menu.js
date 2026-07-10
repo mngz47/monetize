@@ -299,7 +299,6 @@ setTimeout(expanding, 1000);
 	//if(expand_index>e('canvas_dimension_2').offsetWidth){
 		expand_index = 0;
 		document.body.removeChild(object);
-		document.body.value += " object removed <br>";
 	//}
 }
 }
