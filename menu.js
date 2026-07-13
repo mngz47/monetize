@@ -301,7 +301,7 @@ setTimeout(expanding, 500);
 	
 	
 	var vanish = function(){
-		toggle(object);
+		object.style.display = "none";
 };
 
 setTimeout(vanish, 3000);
