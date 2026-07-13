@@ -296,10 +296,16 @@ setTimeout(expanding, 500);
 
 }else{
 	
-	//if(expand_index>e('canvas_dimension_2').offsetWidth){
 		expand_index = 0;
 		document.body.removeChild(object);
-	//}
+	
+	
+	var vanish = function(){
+		toggle(object);
+};
+
+setTimeout(vanish, 3000);
+	
 }
 }
 
