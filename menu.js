@@ -305,6 +305,7 @@ setTimeout(expanding, 500);
 	
 var vanish = function(){
 	e('canvas_dimension_2').removeChild(object);
+	toggle(object);
 };
 
 setTimeout(vanish, 3000);
