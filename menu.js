@@ -164,7 +164,10 @@ function splash(){
   logo.style.left = Math.round(screen.width/2)+"px";
   logo.style.top = Math.round(screen.height/2)+"px";
 
-    
+
+	document.body.style.overflow =  "hidden";
+
+	
   setInterval(toggleEnlarge(logo),1000);
 
 	//document.body
@@ -223,9 +226,18 @@ function welcome(){
 }
 
 function confirm_welcome(){
-    freeMonthlyQuota();
+
+try {
+	document.body.style.overflow =  "auto";
+      freeMonthlyQuota();
  //   document.body.innerHTML=content;
+
 	  document.body.removeChild(preLoad);
+} catch (error) {
+	 document.body.removeChild(preLoad);
+}
+	
+
 	
 }
 
@@ -295,7 +307,7 @@ var expanding = function(){
 try {
   object_expand(object);
 } catch (error) {
-  object_expand(e("m_object"));
+	toggle(e('canvas_dimension_2'));
 }
 		
 };
