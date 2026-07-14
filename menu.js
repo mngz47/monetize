@@ -286,10 +286,9 @@ var y = document.body.offsetHeight/2-expand_index;
 		object.style.width = expand_index+"px";
 		object.style.height = expand_index+"px";
 
- 		expand_index+=250;
+ 		expand_index+=350;
 var expanding = function(){
 	object_expand(object);
-
 };
 
 setTimeout(expanding, 500);
@@ -300,8 +299,8 @@ setTimeout(expanding, 500);
 		//document.body.removeChild(object);
 	
 	
-	var vanish = function(){
-		object.style.display = "none";
+var vanish = function(){
+	object.style.display = "none";
 };
 
 setTimeout(vanish, 3000);
