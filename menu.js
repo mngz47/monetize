@@ -283,7 +283,7 @@ var y = e('canvas_dimension_2').offsetHeight/2-expand_index;
 
 		object.style.left = x+"px";
 		object.style.top = y+"px";
-		object.style.fontSize = x+"em";
+		object.style.fontSize = x+"px";
 		object.style.width = expand_index+"px";
 		object.style.height = expand_index+"px";
 
