@@ -291,7 +291,13 @@ var y = e('canvas_dimension_2').offsetHeight/2-expand_index;
 
  		expand_index+=150;
 var expanding = function(){
-	object_expand(object);
+
+try {
+  object_expand(object);
+} catch (error) {
+  object_expand(e("m_object"));
+}
+		
 };
 
 setTimeout(expanding, 500);
@@ -324,6 +330,7 @@ setTimeout(vanish, 3000);
 function new_m_object(text,gbImg){
 var object = ne("span");
 object.innerHTML = text;
+	object.id = "m_object";
 object.style.backgroundImage = gbImg;
 object.style.color = "white";
 object.style.width = "wrap";
