@@ -297,7 +297,7 @@ setTimeout(expanding, 500);
 }else{
 	
 		expand_index = 0;
-		document.body.removeChild(object);
+		//document.body.removeChild(object);
 	
 	
 	var vanish = function(){
