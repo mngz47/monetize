@@ -267,6 +267,8 @@ function freeMonthlyQuota(){
 
 
 function show_m_surface_object(object){
+e('canvas_dimension_2').style.width = "600px";
+e('canvas_dimension_2').style.height = "400px";
 
 e('canvas_dimension_2').appendChild(object);
 object_m_expand(object);
