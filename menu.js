@@ -268,7 +268,7 @@ function freeMonthlyQuota(){
 
 function show_m_surface_object(object){
 
-document.body.appendChild(object);
+e('canvas_dimension_2').appendChild(object);
 object_m_expand(object);
 
 }
@@ -276,17 +276,18 @@ object_m_expand(object);
 var expand_index = 0;
 function object_m_expand(object){
 
-if(expand_index<document.body.offsetWidth){
+if(expand_index<e('canvas_dimension_2').offsetWidth){
 
-	var x = document.body.offsetWidth/2-expand_index;
-var y = document.body.offsetHeight/2-expand_index;
+	var x = e('canvas_dimension_2').offsetWidth/2-expand_index;
+var y = e('canvas_dimension_2').offsetHeight/2-expand_index;
 
 		object.style.left = x+"px";
 		object.style.top = y+"px";
+		object.style.fontSize = x+"em";
 		object.style.width = expand_index+"px";
 		object.style.height = expand_index+"px";
 
- 		expand_index+=350;
+ 		expand_index+=150;
 var expanding = function(){
 	object_expand(object);
 };
@@ -296,11 +297,12 @@ setTimeout(expanding, 500);
 }else{
 	
 		expand_index = 0;
+	
 		//document.body.removeChild(object);
 	
 	
 var vanish = function(){
-	object.style.display = "none";
+	e('canvas_dimension_2').removeChild(object);
 };
 
 setTimeout(vanish, 3000);
