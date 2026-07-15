@@ -371,7 +371,7 @@ e('canvas_dimension_2').innerHTML = e('canvas_dimension_2').innerHTML.substring(
 	}
 };
 
-setTimeout(vanish, 200);
+setTimeout(vanish, 600);
 	
 }else{
 	
