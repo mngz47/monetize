@@ -361,7 +361,9 @@ var vanish = function(){
 e('canvas_dimension_2').innerHTML = e('canvas_dimension_2').innerHTML.substring(0,(v_l-v_i));
 
 	v_i+=1;
+		
 		m_vanish();
+		
 	}else{
 
 	toggle(e('canvas_dimension_2'));
@@ -371,6 +373,9 @@ e('canvas_dimension_2').innerHTML = e('canvas_dimension_2').innerHTML.substring(
 
 setTimeout(vanish, 200);
 	
+}else{
+	
+toggle(e('canvas_dimension_2'));
 }
 }
 
