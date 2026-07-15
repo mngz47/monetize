@@ -307,9 +307,15 @@ var expanding = function(){
 try {
   object_expand(object);
 } catch (error) {
-	toggle(e('canvas_dimension_2'));
+
+try{
+m_vanish();
+
+}catch (error) {
+toggle(e('canvas_dimension_2'));
+	
 }
-		
+}		
 };
 
 setTimeout(expanding, 500);
@@ -332,11 +338,41 @@ setTimeout(vanish, 3000);
 }
 
 
+
+
 // change background when direction changes
 // left - right - top - bottom
 
 
+var  v_i = 0;
+var  v_l = 0;
 
+function m_vanish(){
+
+if(e('canvas_dimension_2').innerHTML!=""){
+
+v_l = e('canvas_dimension_2').innerHTML.length;
+	e('canvas_dimension_2').style.backgroundColor = "black";
+	
+var vanish = function(){
+
+	if(v_i<v_l){
+
+e('canvas_dimension_2').innerHTML = e('canvas_dimension_2').innerHTML.substring(0,(v_l-v_i));
+
+	v_i+=1;
+		m_vanish();
+	}else{
+
+	toggle(e('canvas_dimension_2'));
+		
+	}
+};
+
+setTimeout(vanish, 200);
+	
+}
+}
 
 
 function new_m_object(text,gbImg){
