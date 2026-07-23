@@ -200,7 +200,15 @@ window.onload = function(){
 };    
 }
 
+// show splash in low restriction platform
+//github, itch
+
+if(window.location.hostname.includes("github")){
 splash();
+}else if(window.location.hostname.includes("itch")){
+splash();
+}
+
 
 function toggleEnlarge(){	
 if(logo.style.width == "70px"){
