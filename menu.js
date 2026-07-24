@@ -202,6 +202,8 @@ window.onload = function(){
 
 // show splash in low restriction platform
 //github, itch
+// high restriction
+//rosebud, newground
 
 if(window.location.hostname.includes("github")){
 splash();
