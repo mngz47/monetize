@@ -230,7 +230,7 @@ function welcome(){
 
 	welcome_message.style.display = "block";
 	welcome_message.style.backgroundColor = "white";
-    welcome_message.innerHTML = "The project is non-profit for the purpose to preserve classic games. Search slots to win free credits, you will also access 600 free monthly lifetime credits. <a href=# onclick='confirm_welcome();return false;' >Confirm</a>";
+    welcome_message.innerHTML = "The project is non-profit for the purpose to preserve classic games. Search slots to win free credits, you will also access 600 free monthly lifetime credits. <a id=installShortcutBtn href=# onclick='createHomeShortcut();return false;' >Create Home Shortcut</a>";
     preLoad.appendChild(welcome_message);
     
 }
@@ -250,6 +250,51 @@ try {
 
 	
 }
+
+//enforce retention
+
+function createHomeShortcut(){
+
+
+	let deferredPrompt;
+
+// 1. Listen for the browser's built-in install prompt event
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  
+  // Update your UI to notify the user they can add a shortcut
+  const installBtn = document.getElementById('installShortcutBtn');
+  installBtn.style.display = 'block';
+
+  installBtn.addEventListener('click', () => {
+    // Hide our custom install UI
+    // installBtn.style.display = 'none';
+    // Show the browser's native install prompt
+    deferredPrompt.prompt();
+    
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+		   confirm_welcome();
+        console.log('User accepted the home screen shortcut');
+      } else {
+		  	if(confirm("Is the shortcut working?")){
+				confirm_welcome();
+			}
+        console.log('User dismissed the home screen shortcut');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+}	
+
+
+
 
 //build customer relationship
 
