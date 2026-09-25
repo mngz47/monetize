@@ -230,7 +230,7 @@ function welcome(){
 
 	welcome_message.style.display = "block";
 	welcome_message.style.backgroundColor = "white";
-    welcome_message.innerHTML = "The project is non-profit for the purpose to preserve classic games. Search slots to win free credits, you will also access 600 free monthly lifetime credits. <a id=installShortcutBtn href=# onclick='createHomeShortcut();return false;' >Create Home Shortcut</a>";
+    welcome_message.innerHTML = "The project is non-profit for the purpose to preserve classic games. Search slots to win free credits, you will also access 600 free monthly lifetime credits. <a href=# onclick='createHomeShortcut();return false;' >Create Home Shortcut</a>";
     preLoad.appendChild(welcome_message);
     
 }
@@ -255,10 +255,9 @@ try {
 //https://www.google.com/search?q=create+shortcut+to+website+mobile+js+code
 
 function createHomeShortcut(){
-
-
+	try {
+		
 	let deferredPrompt;
-
 // 1. Listen for the browser's built-in install prompt event
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -266,11 +265,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   
-  // Update your UI to notify the user they can add a shortcut
-  const installBtn = document.getElementById('installShortcutBtn');
-  installBtn.style.display = 'block';
-
-  installBtn.addEventListener('click', () => {
     // Hide our custom install UI
     // installBtn.style.display = 'none';
     // Show the browser's native install prompt
@@ -280,17 +274,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
 		   confirm_welcome();
-        console.log('User accepted the home screen shortcut');
+        
       } else {
 		  	if(confirm("Is the shortcut working?")){
 				confirm_welcome();
 			}
-        console.log('User dismissed the home screen shortcut');
       }
       deferredPrompt = null;
     });
-  });
 });
+		
+} catch (error) {
+	  	if(confirm("Is the shortcut working? There was an error. Create it using top right menu option.")){
+				confirm_welcome();
+			}
+}
 
 }	
 
