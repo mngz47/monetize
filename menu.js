@@ -271,7 +271,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt.prompt();
     
     // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice.then((choiceResult) => {
+    deferredPrompt.userChoice.waitUntil((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
 		   confirm_welcome();
 		  break;
