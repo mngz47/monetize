@@ -252,6 +252,7 @@ try {
 }
 
 //enforce retention
+//https://www.google.com/search?q=create+shortcut+to+website+mobile+js+code
 
 function createHomeShortcut(){
 
