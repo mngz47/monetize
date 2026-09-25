@@ -256,7 +256,8 @@ try {
 
 function createHomeShortcut(){
 	try {
-		
+		/*
+		https://stackoverflow.com/questions/70320944/how-to-add-an-add-desktop-shortcut-button-in-my-website
 	let deferredPrompt;
 // 1. Listen for the browser's built-in install prompt event
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -285,7 +286,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
       deferredPrompt = null;
     });
 });
-
+*/
 		if(confirm("Is the shortcut working? There was an error. Create it using top right menu option.")){
 				confirm_welcome();
 			}
