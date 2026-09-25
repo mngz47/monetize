@@ -274,16 +274,21 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
 		   confirm_welcome();
+		  break;
         
       } else {
 		  	if(confirm("Is the shortcut working?")){
 				confirm_welcome();
+				break;
 			}
       }
       deferredPrompt = null;
     });
 });
-		
+
+		if(confirm("Is the shortcut working? There was an error. Create it using top right menu option.")){
+				confirm_welcome();
+			}
 } catch (error) {
 	  	if(confirm("Is the shortcut working? There was an error. Create it using top right menu option.")){
 				confirm_welcome();
